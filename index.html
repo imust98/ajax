@@ -17,10 +17,13 @@
       const res = await request({
         url: 'http://localhost:7001/api/activity/list?pageIndex=1&pageSize=20&activityName=',
         method: 'get'
+      }).catch(e => {
+        throw new Error('error')
       })
+      return res;
       console.log(res)
     }
-    // retry(aa)
+    retry(aa)
   </script>
 </body>
 
